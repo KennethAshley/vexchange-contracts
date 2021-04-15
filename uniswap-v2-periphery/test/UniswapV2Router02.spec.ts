@@ -198,7 +198,8 @@ describe('fee-on-transfer tokens', () => {
       pair,
       { owner: wallet.address, spender: router.address, value: expectedLiquidity.sub(MINIMUM_LIQUIDITY) },
       nonce,
-      MaxUint256
+      MaxUint256,
+      0x27
     )
     const { v, r, s } = ecsign(Buffer.from(digest.slice(2), 'hex'), Buffer.from(wallet.privateKey.slice(2), 'hex'))
 
